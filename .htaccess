@@ -1,3 +1,3 @@
 RewriteEngine on
 RewriteCond $1 !^(index\.php|uploads|images|public|robots\.txt)
-RewriteRule ^(.*)$ /sgpa/index.php/$1 [L]
+RewriteRule ^(.*)$ /S_PRO_A/index.php/$1 [L]
