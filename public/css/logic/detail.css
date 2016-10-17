@@ -1,0 +1,29 @@
+@CHARSET "ISO-8859-1";
+
+.mdl-layout__header .mdl-layout__drawer-button{
+	display: none;	
+}
+
+.mdl-button__return,
+.mdl-button__return:hover,
+.mdl-button__return:focus{
+	display: block;	
+	z-index: 5
+}
+
+.mdl-card{
+	margin-bottom: 16px
+}
+
+tr.group {
+	font-weight: 600;
+	color: #757575;
+	text-align: left;
+    background-color: #eee;
+}
+
+tr.group td{
+	text-align: left;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important
+}

@@ -1,0 +1,272 @@
+@CHARSET "ISO-8859-1";
+/* Reset */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+a {
+	color: #bbb;
+	text-decoration: none;
+}
+fieldset {border: none;}
+button, input {
+	border: none;
+	outline: none;
+}
+
+/* General */
+body {
+	width: 100%;
+	font-family: Roboto,sans-serif;
+	background: #e2e2e2;
+	overflow-x: hidden 
+}
+main{
+	background-color: #e2e2e2 !important
+}
+section {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	margin: 0 auto;
+}
+button {
+	position: relative;
+	width: 160px;
+	text-transform: uppercase;
+	background-color: transparent;
+}
+.login-form, .signup-form {
+	width: 250px;
+	padding: 16px;
+	background: #69F0AE;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px
+		rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);	
+}
+.login-form label, .login-form input, .login-form span.mdl-textfield__error, .login-form button, .signup-form label, .signup-form input, .signup-form span.mdl-textfield__error, .signup-form button {
+	display: block;
+	opacity: 0;
+}
+label {
+	padding-top: 15px;
+	letter-spacing: 0.5px;
+}
+input:not([type="submit"]) {
+    padding: 20px 0 0 0;
+	color: #757575;
+}
+
+/* Classes */
+.buttons {
+	height: 100px;
+	text-align: center;
+}
+.login-underline, .signup-underline {
+	content: '';
+	position: absolute;
+	top: 65px;
+	left: 30px;
+	height: 2px;
+	width: 100px;
+	opacity: 0;
+	background: #FFF;
+}
+.login-underline.login-button-active {
+	animation: loginUnderlineActive .2s linear .1s forwards;
+	transform-origin: right;
+}
+.login-underline.signup-button-active {
+	animation: loginUnderlineInactive .3s linear forwards;
+	transform-origin: right;
+}
+.signup-underline.signup-button-active {
+	animation: signupUnderlineActive .2s linear .1s forwards;
+	transform-origin: left;
+}
+.signup-underline.login-button-active {
+	animation: signupUnderlineInactive .3s linear forwards;
+	transform-origin: left;
+}
+.login-button-active {
+	animation: buttonsMoveToRight .3s linear forwards;
+	color: #FFF
+}
+.signup-button-active {
+	animation: buttonsMoveToLeft .3s linear forwards;
+	color: #fff;
+}
+.login-form.login-button-active label, .login-form.login-button-active input, .login-form.login-button-active span.mdl-textfield__error, .login-form.login-button-active button {animation: fielsetSlideToRight .5s linear 0.25s forwards;}
+.signup-form.signup-button-active label, .signup-form.signup-button-active input, .signup-form.signup-button-active span.mdl-textfield__error, .signup-form.signup-button-active button {animation: fieldsetSlideToLeft .5s linear 0.25s forwards;}
+.login-form button, .signup-form button {
+	background-color: #00C853;
+	color: #FFF;
+	font-weight: 600;
+	float: right;
+    margin-top: 10px;
+}
+.login-form {animation: loginToBottom .4s linear forwards;}
+.signup-form {animation: signUpToBottom .4s linear forwards;}
+.login-form.login-button-active {animation: loginToTop .4s linear forwards;}
+.signup-form.signup-button-active {animation: signUpToTop .4s linear forwards;}
+
+/* Animations */
+@keyframes loginUnderlineActive {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes loginUnderlineInactive {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0);
+		opacity: 1;
+	}
+}
+@keyframes signupUnderlineActive {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes signupUnderlineInactive {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0);
+		opacity: 1;
+	}
+}
+@keyframes buttonsMoveToRight {
+	0% {
+		transform: translate(0);
+	}
+	100% {
+		transform: translate(50px);
+	}
+}
+@keyframes buttonsMoveToLeft {
+	0% {
+		transform: translate(0);
+	}
+	100% {
+		transform: translate(-50px);
+	}
+}
+@keyframes fielsetSlideToRight {
+	0% {
+		transform: translate(-15px);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+@keyframes fieldsetSlideToLeft {
+	0% {
+		transform: translate(15px);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+@keyframes loginToBottom {
+	0% {
+		transform: translate(100px);
+		z-index: 10;
+		background-color: #fff;
+	}
+	49% {
+		transform: translate(0);
+		z-index: 10;
+	}
+	50% {
+		transform: translate(0);
+		z-index: 1;
+	}
+	100% {
+		transform: translate(100px, 20px);
+		z-index: 1;
+		background-color: #69F0AE;
+	}
+}
+@keyframes signUpToBottom {
+	0% {
+		transform: translate(-100px);
+		z-index: 10;
+		height: 360px;
+		background-color: #fff;
+	}
+	49% {
+		transform: translate(0);
+		z-index: 10;
+	}
+	50% {
+		transform: translate(0);
+		z-index: 1;
+	}
+	100% {
+		transform: translate(-100px, 20px);
+		z-index: 1;
+		height: 280px;
+		background-color: #69F0AE;
+	}
+}
+@keyframes loginToTop {
+	0% {
+		transform: translate(100px, 20px);
+		z-index: 1;
+		background-color: #69F0AE;
+	}
+	49% {
+		transform: translate(0);
+		z-index: 1;
+	}
+	50% {
+		transform: translate(0);
+		z-index: 10;
+	}
+	100% {
+		transform: translate(100px);
+		z-index: 10;
+		background-color: #fff;
+	}
+}
+@keyframes signUpToTop {
+	0% {
+		transform: translate(-100px, 20px);
+		z-index: 1;
+		background-color: #69F0AE;
+	}
+	49% {
+		transform: translate(0);
+		z-index: 1;
+	}
+	50% {
+		transform: translate(0);
+		z-index: 10;
+	}
+	100% {
+		transform: translate(-100px);
+		z-index: 10;
+		background-color: #fff;
+	}
+}

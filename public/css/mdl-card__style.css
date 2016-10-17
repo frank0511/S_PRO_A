@@ -1,0 +1,54 @@
+@CHARSET "ISO-8859-1";
+
+.content-cards{
+	text-align: center;
+	padding: 0
+}
+
+.mdl-card.mdl-cliente{
+	background-color: #FFF;
+    background-position: 0 0;
+    background-size: 100%;
+    width: 100%;
+	max-width: 250px;
+    margin: 0 3.75px 7.5px 3.75px;
+	display: inline-flex;	
+	transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+.mdl-cliente .mdl-text__head,
+.mdl-cliente .mdl-text__item,
+.mdl-cliente .mdl-text__value{
+	height: 20px		
+}
+
+.mdl-cliente .mdl-text__head{
+	margin-bottom: 10px;	
+	font-weight: 900
+}
+
+.mdl-cliente .mdl-text__head,
+.mdl-cliente .mdl-text__item{
+	text-align: left;	
+}
+
+.mdl-cliente .mdl-text__value.mdl-text__link{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.mdl-cliente .mdl-text__item{
+	font-weight: 300;	
+	color: #9E9E9E;
+}
+
+.mdl-cliente .mdl-text__value{
+	text-align: right;
+	text-overflow: ellipsis;
+	overflow: hidden; 
+	white-space: nowrap;
+	font-weight: 500;	
+	color: #757575;
+	padding-left: 0;
+}
