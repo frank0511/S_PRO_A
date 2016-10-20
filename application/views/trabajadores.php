@@ -116,13 +116,14 @@
                                         <input class="mdl-textfield__input" type="text" id="numDoc">
                                         <label class="mdl-textfield__label" for="numDoc">Numero de Documento</label>
                                     </div>
-                                </div> 
+                                </div>
 					       </div>
     					</div>
     					<div class="mdl-card__actions">
                             <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Cerrar</button>
                             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised" data-dismiss="modal" onclick="accionTrabajador()">Aceptar</button>
                         </div>
+
                     </div>
                 </div>
             </div>     

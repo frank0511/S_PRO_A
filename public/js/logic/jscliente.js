@@ -1,3 +1,9 @@
+function init(){
+	initSelect();
+	initTooltip();
+	$('.datepicker').datepicker();
+	initLimitInputs('observacionesTrabajador');
+}
 var accionGlobal = "";
 function abrirModalCliente(accion){
 	accionGlobal = accion;

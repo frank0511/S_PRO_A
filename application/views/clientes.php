@@ -76,13 +76,67 @@
     						<h2 class="mdl-card__title-text" id="tittleAccion">Hola</h2>
     					</div>
 					    <div class="mdl-card__supporting-text">				
-					       <div class="row">					           
-					           <div class="col-sm-6 mdl-group__icon mdl-group__select">
-					               <select class="form-control mdl-select" id="tipoDocumento" onchange="mostrarFormularioCliente();">
-            			                <option value="">Seleccione tipo de documneto</option>
-					                    <?php echo $optDocumento;?>
-            			           </select>
-					           </div>
+					       <div class="row">
+                                <div class="col-sm-6 mdl-group__icon" id="inputNombre">
+                                    <i class="mdi mdi-edit"></i>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="nombre">
+                                        <label class="mdl-textfield__label" for="nombre">Nombre</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 mdl-group__icon" id="inputApellidoP">
+                                    <i class="mdi mdi-edit"></i>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="apellidoP">
+                                        <label class="mdl-textfield__label" for="apellidoP">Apellido Paterno</label>
+                                    </div>
+                                </div>                             
+                               <div class="col-sm-6 mdl-group__icon" id="inputApellidoM">
+                                    <i class="mdi mdi-edit"></i>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="apellidoM">
+                                        <label class="mdl-textfield__label" for="apellidoM">Apellido Materno</label>
+                                    </div>
+                                </div>			
+                                <div class="col-sm-6 mdl-group__icon" id="inputApellidoM">
+                                    <i class="mdi mdi-edit"></i>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="apellidoM">
+                                        <label class="mdl-textfield__label" for="apellidoM">DNI</label>
+                                    </div>
+                                </div>             
+                               <div class="col-sm-6 mdl-group__icon" id="inputApellidoM">
+                                    <i class="mdi mdi-edit"></i>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="apellidoM">
+                                        <label class="mdl-textfield__label" for="apellidoM">Dirección</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 mdl-group__icon" id="inputApellidoM">
+                                    <i class="mdi mdi-edit"></i>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="apellidoM">
+                                        <label class="mdl-textfield__label" for="apellidoM">Teléfono</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 mdl-group__icon mdl-group__select" id="comboTipoDocumento">
+                                    <i class="mdi mdi-edit"></i>
+                                    <select class="form-control mdl-select" id="comboTipoDoc">
+                                        <option value="">Seleccione Departamento</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 mdl-group__icon mdl-group__select" id="comboTipoDocumento">
+                                    <i class="mdi mdi-edit"></i>
+                                    <select class="form-control mdl-select" id="comboTipoDoc">
+                                        <option value="">Seleccione Provincia</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 mdl-group__icon mdl-group__select" id="comboTipoDocumento">
+                                    <i class="mdi mdi-edit"></i>
+                                    <select class="form-control mdl-select" id="comboTipoDoc">
+                                        <option value="">Seleccione Distrito</option>
+                                    </select>
+                                </div>  
 					       </div>
     					</div>
     					<div class="mdl-card__actions">
@@ -116,10 +170,8 @@
     	<script type="text/javascript" src="<?php echo RUTA_JS?>jsutils.js"></script>
     	<script type="text/javascript" src="<?php echo RUTA_JS?>logic/jscliente.js"></script>    	
     	
-    	<script type="text/javascript">
-        	$(document).ready(function(){
-        	    $('[data-toggle="tooltip"]').tooltip(); 
-        	});
-    	</script>
+    	        <script type="text/javascript">
+            init(); 
+        </script>
     </body>
 </html>
