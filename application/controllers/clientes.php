@@ -11,7 +11,6 @@ class Clientes extends CI_Controller {
         $this->load->model('m_clientes');
         $this->load->helper('Utils');
     }
-    //HOLA MUNDO :v
 	public function index()
 	{
 	    $idUsuario     = $this->session->userdata('idUsuario');
