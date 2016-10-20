@@ -34,7 +34,11 @@ class Trabajadores extends CI_Controller {
 	        redirect('','refresh');
 	    }
 	}
-	function accionFormulario(){
+	function buildComboSexo($id = null){
 		
+	}
+
+	function accionFormulario(){
+		$accion = _post('accionGlobal');
 	}
 }

@@ -98,18 +98,25 @@
                                         <label class="mdl-textfield__label" for="apellidoM">Apellido Materno</label>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 mdl-group__icon mdl-group__select" id="comboSexo">
-                                    <i class="mdi mdi-edit"></i>
-                                    <select class="form-control mdl-select" id="comboSex">
-                                        <option value="">Seleccione Sexo</option>
-                                    </select>
-                                </div>
+                                <div class="col-sm-6 col-md-4 mdl-group__icon mdl-group__select">
+                                           <i class="mdi mdi-wc"></i>
+                                           <select class="mdl-select form-control" id="sexoTrabajador">
+                                                <option value="0">Seleccione sexo</option>
+                                           </select>
+                                       </div>
                                 <div class="col-sm-6 mdl-group__icon mdl-group__select" id="comboTipoDocumento">
                                     <i class="mdi mdi-edit"></i>
                                     <select class="form-control mdl-select" id="comboTipoDoc">
                                         <option value="">Seleccione Tipo de Documento</option>
                                     </select>
-                                </div>
+                                </div>                             
+                               <div class="col-sm-6 mdl-group__icon" id="inputNumeroDocumento">
+                                    <i class="mdi mdi-edit"></i>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="numDoc">
+                                        <label class="mdl-textfield__label" for="numDoc">Numero de Documento</label>
+                                    </div>
+                                </div> 
 					       </div>
     					</div>
     					<div class="mdl-card__actions">
@@ -142,10 +149,8 @@
     	<script type="text/javascript" src="<?php echo RUTA_PLUGINS?>toastr/toastr.min.js"></script>
     	<script type="text/javascript" src="<?php echo RUTA_JS?>jsutils.js"></script>
     	<script type="text/javascript" src="<?php echo RUTA_JS?>logic/jstrabajador.js"></script>
-    	<script type="text/javascript">
-        	$(document).ready(function(){
-        	    $('[data-toggle="tooltip"]').tooltip(); 
-        	});
-    	</script>
+        <script type="text/javascript">
+            init(); 
+        </script>
     </body>
 </html>
