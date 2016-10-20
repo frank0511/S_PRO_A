@@ -71,7 +71,7 @@ input:not([type="submit"]) {
 	height: 2px;
 	width: 100px;
 	opacity: 0;
-	background: #FFF;
+	background: #0006cc;
 }
 .login-underline.login-button-active {
 	animation: loginUnderlineActive .2s linear .1s forwards;
@@ -91,16 +91,16 @@ input:not([type="submit"]) {
 }
 .login-button-active {
 	animation: buttonsMoveToRight .3s linear forwards;
-	color: #FFF
+	color: #0006cc
 }
 .signup-button-active {
 	animation: buttonsMoveToLeft .3s linear forwards;
-	color: #fff;
+	color: #0006cc;
 }
 .login-form.login-button-active label, .login-form.login-button-active input, .login-form.login-button-active span.mdl-textfield__error, .login-form.login-button-active button {animation: fielsetSlideToRight .5s linear 0.25s forwards;}
 .signup-form.signup-button-active label, .signup-form.signup-button-active input, .signup-form.signup-button-active span.mdl-textfield__error, .signup-form.signup-button-active button {animation: fieldsetSlideToLeft .5s linear 0.25s forwards;}
 .login-form button, .signup-form button {
-	background-color: #00C853;
+	background-color: #0006cc;
 	color: #FFF;
 	font-weight: 600;
 	float: right;
