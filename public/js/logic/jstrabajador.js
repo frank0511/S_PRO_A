@@ -1,3 +1,8 @@
+function init(){
+	initSelect();
+	initTooltip();
+	initLimitInputs('observacionesTrabajador');
+}
 var accionGlobal = "";
 function abrirModalTrabajador(accion){
 	accionGlobal = accion;
