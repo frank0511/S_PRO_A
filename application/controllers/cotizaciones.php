@@ -28,13 +28,10 @@ class Cotizaciones extends CI_Controller {
 	        $nav['modulos'] = $perm;
 	        $nav['view']    = 'Cotizaciones';
 	        
-	        $navegador = $this->load->view('navegador', $nav, true);	
-	        $data['navegador'] = $navegador;
-	    
-	        $nav = $this->load->view('navegador', $data);	
-	        $data['navegador'] = $nav;	    
+	        $navegador = $this->load->view('v_navegador', $nav, true);	
+	        $data['navegador'] = $navegador;   
 	        
-	        $this->load->view('index', $data);
+	        $this->load->view('v_index', $data);
 	    } else{
 	        redirect('','refresh');
 	    }

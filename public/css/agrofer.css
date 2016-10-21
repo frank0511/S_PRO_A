@@ -16,6 +16,15 @@ nav.mdl-navigation .mdl-navigation__link i{
     margin-right: 5px;
 }
 
+.mdl-layout__drawer .mdl-navigation{
+	padding-top: 0
+}
+
+.mdl-layout__drawer>.mdl-layout-title,
+.mdl-layout__drawer .mdl-navigation .mdl-navigation__link{
+	padding: 10px 20px
+}
+
 body.bg-fab-black .opacidad-fab{
 	background-color: #000;
 	opacity: 0.20;
@@ -39,12 +48,6 @@ section.mdl-container{
 	padding: 0
 }
 
-@media ( max-width: 1024px ) {
-	section.mdl-container{
-		padding: 0 15px	
-	}
-}
-
 body.bg-fab-black #menu{
 	z-index: 20
 }
@@ -59,7 +62,7 @@ body.bg-fab-black #menu{
 }
 
 main{
-	padding: 15px 0;
+	padding: 15px;
 	background-color: #EEEEEE
 }
 
@@ -106,25 +109,28 @@ a, a:FOCUS, a:ACTIVE, a:HOVER, a:VISITED {
 
 .mdl-textfield__label{
 	color: #757575;
-	font-size: 14px	
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .mdl-textfield .mdl-textfield__input{
-	border-bottom-color: #757575;
+	border-bottom-color:  #BDBDBD;
+	color: #757575;
+	font-weight: 400
 }
 
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
 	font-size: 10px;
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
-	color: #757575 !important
+	color:  #BDBDBD !important;
 }
 
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
-	color: #0006cc !important
+	color: #56BC8A !important
 }
 
 .mdl-textfield.is-invalid .mdl-textfield__input,
@@ -143,12 +149,12 @@ a, a:FOCUS, a:ACTIVE, a:HOVER, a:VISITED {
 .mdl-textfield__label:after,
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after,
 .mdl-tabs__tab .mdl-tabs__ripple-container .mdl-ripple{
-	background-color: #0006cc
+	background-color: #56BC8A
 }
 
 .mdl-tabs.is-upgraded .mdl-tabs__tab:HOVER,
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active{
-	color: #00C853;
+	color: #56BC8A;
 }
 
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active{
@@ -185,7 +191,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 
 .mdl-radio.is-checked .mdl-radio__outer-circle,
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
-    border-color: #00C853;
+    border-color: #56BC8A;
 }
 
 .mdl-switch.is-checked .mdl-switch__track{
@@ -199,6 +205,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 		rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 	border-radius: 4px;
 	overflow: inherit;
+	min-height: 100px
 }
 
 .mdl-card__actions{
@@ -219,7 +226,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 }
 
 .mdl-card__title-text{
-	color: #0006cc;
+	color: #56BC8A;
 	text-overflow: ellipsis;
 	overflow: hidden; 
 	white-space: nowrap;
@@ -257,13 +264,13 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 
 .mdl-card__actions button.mdl-button,
 .mdl-card__actions a.mdl-button{
-	color: #0006cc;
+	color: #56BC8A;
 	font-weight: 600
 }
 
 .mdl-card__actions button.mdl-button--raised,
 .mdl-card__actions a.mdl-button--raised{
-	background-color: #0006cc;
+	background-color: #56BC8A;
 	color: #FFFFFF
 }
 
@@ -382,7 +389,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 .mfb-component__button--main, .mfb-component__button--main:HOVER,
 	.mfb-component__button--main:FOCUS, .mfb-component__button--main:ACTIVE
 	{
-	background-color: #0006cc;
+	background-color: #56BC8A;
 	color: #FFF
 }
 
@@ -392,7 +399,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 	height: 32px;
 	width: 32px;
 	background-color: #FFF;
-	color: #00C853
+	color: #56BC8A
 }
 
 .mfb-component__child-icon {
@@ -410,7 +417,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
     margin-top: -10.5px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px
  				rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    color: #0006cc;
+    color: #56BC8A;
 	font-weight: 600;
 	background-color: #FFF
 }
@@ -485,7 +492,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 }
 
 .pagination .mdl-button--raised.mdl-button--colored{
-	background-color: #00C853;
+	background-color: #56BC8A;
 	font-size: 18px
 }
 
@@ -528,7 +535,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	border: none;
-	border-bottom: 1px solid #757575;
+	border-bottom: 1px solid #9E9E9E;
 	border-radius: 0;
 	background-color: transparent;
 	padding-left: 0;	
@@ -555,13 +562,26 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 .mdl-select .btn.dropdown-toggle.btn-default:HOVER,
 .mdl-select .btn.dropdown-toggle.btn-default:FOCUS,
 .mdl-select .btn.dropdown-toggle.btn-default:ACTIVE{
-	border-bottom: 1px solid #757575;		
+	border-bottom: 1px solid #E0E0E0;		
+}
+
+.mdl-select .btn.dropdown-toggle.btn-default .filter-option{
+	color: #9E9E9E;
+}
+
+.dropdown-menu.inner li a span.text{
+	color: #9E9E9E;
+}
+
+.caret{
+	border-top-color: #9E9E9E
 }
 
 .mdl-select .dropdown-menu{
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;	
 }
+
 /* INPUT/SELECT GROUP ICON */
 .mdl-group__icon{
 	min-height: 67px;
@@ -569,7 +589,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 }
 
 .mdl-group__icon.active i{
-	color: #0006cc
+	color: #56BC8A
 }
 
 .mdl-group__icon.mdl-group__select{
@@ -578,7 +598,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 
 
 .mdl-group__icon.active .mdl-button__select{
-	border-bottom: 2px solid #00C853 !important
+	border-bottom: 2px solid #56BC8A !important
 }
 
 
@@ -595,8 +615,9 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 .mdl-group__icon i{
     width: 22.5px;
     position: relative;
-    top: 7.5px;
-    font-size: 18px;	
+    top: 5px;
+    font-size: 17px;	
+	color: #9E9E9E
 }
 
 .mdl-group__icon .mdl-textfield .mdl-textfield__label:AFTER{
@@ -654,11 +675,11 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 .mdl-layout__drawer .mdl-layout-title a,
 .mdl-layout__drawer .mdl-layout-title a:HOVER,
 .mdl-layout__drawer .mdl-layout-title a:FOCUS {
-	color: #0006cc
+	color: #56BC8A
 }
 
 .mdl-layout__header-row .mdl-layout-title a:BEFORE{
-	content: 'SGPA' !important;
+	content: 'Agrofer'
 }
 
 .mdl-layout__header-row .mdl-layout-title label{
@@ -700,9 +721,13 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 }
 
 /* DateTimePicker */
+.dtp > .dtp-content > .dtp-date-view > header.dtp-header{
+	background-color: #56BC8A
+}
+
 .dtp-date-view{
 	padding: 10px 0;
-	background-color: #00C853
+	background-color: #56BC8A
 }
 .dtp > .dtp-content > .dtp-date-view > header.dtp-header{
 	padding: 10px 20px;
@@ -717,6 +742,11 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 .dtp-year-after{
 	position: absolute;
 	top: 15px;	
+}
+
+.dtp-year-next i,
+.dtp-year-after i{
+	color: #FFFFFF
 }
 
 .dtp-year-next{
@@ -783,7 +813,7 @@ header.dtp-header .dtp-actual-year{
 .dtp .dtp-actual-meridien a.selected,
 .dtp table.dtp-picker-days tr > td > a.selected,
 .dtp div.dtp-date, .dtp div.dtp-time{
-	background-color: #00C853;
+	background-color: #56BC8A;
 }
 
 .dtp div.dtp-date i, .dtp div.dtp-time i {
@@ -805,7 +835,14 @@ header.dtp-header .dtp-actual-year{
 }
 
 .dtp-buttons .mdl-button{
-	margin: auto
+	margin: auto;
+	color: #56BC8A;
+	font-weight: 600
+}
+
+.dtp-buttons .mdl-button.mdl-button--raised{
+	background-color: #56BC8A;	
+	color: #FFFFFF;
 }
 
 .dtp table.dtp-picker-days tr > th{
@@ -862,7 +899,7 @@ header.dtp-header .dtp-actual-year{
 .mdl-card-fab .mdl-card__title {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background-color: #0006cc;	
+	background-color: #56BC8A;	
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;	
 }
@@ -872,7 +909,7 @@ header.dtp-header .dtp-actual-year{
 }
 
 .modal .mdl-card__title h2.mdl-card__title-text{
-	color: #00C853;
+	color: #56BC8A;
 }
 
 .mdl-card-fab .mdl-card__title h2.mdl-card__title-text{
@@ -881,7 +918,7 @@ header.dtp-header .dtp-actual-year{
 
 .modal .mdl-card__actions button.mdl-button,
 .mdl-card-fab .mdl-card__actions button.mdl-button{
-	color: #0006cc;
+	color: #56BC8A;
 }
 
 .modal .mdl-card__actions a.mdl-button--raised,
@@ -889,7 +926,7 @@ header.dtp-header .dtp-actual-year{
 .modal .mdl-card__actions button.mdl-button--raised,
 .mdl-card-fab .mdl-card__actions button.mdl-button--raised{
 	color: #FFFFFF;
-	background-color: #0006cc;	
+	background-color: #56BC8A;	
 }
 
 /* MENU BUTTON */
@@ -904,13 +941,13 @@ header .mdl-layout__drawer-button i:BEFORE{
 
 /* INPUT DISABLED MDL */
 .mdl-textfield .mdl-textfield__input[disabled]{
-	color: #757575 !important;
+	color: #E0E0E0 !important;
 	cursor: default !important;
-    border-bottom: 1px dotted #757575 !important;
+    border-bottom: 1px dotted #E0E0E0 !important;
 }
 
 .mdl-textfield .mdl-textfield__input[disabled]  ~ .mdl-textfield__label{
-	color: #757575 !important;
+	color: #E0E0E0 !important;
 }
 
 /* SELECT DISABLED */
@@ -918,7 +955,7 @@ header .mdl-layout__drawer-button i:BEFORE{
 	cursor: no-drop !important;
 	opacity: 1;
 	border-bottom-style: dashed;
-	color: #757575 !important;
+	color: #BDBDBD !important;
 }
 
 .mdl-select.disabled .btn.dropdown-toggle.disabled.btn-default .bs-caret{
@@ -930,7 +967,7 @@ ul.mdl-menu li[disabled],
 ul.mdl-menu li[disabled] i,
 ul.mdl-menu li[disabled="disabled"],
 ul.mdl-menu li[disabled="disabled"] i{	
-	color: #BDBDBD !important;
+	color: #E0E0E0 !important;
 	cursor: no-drop !important;
 }
 
@@ -944,13 +981,13 @@ button.mdl-button[disabled],
 a.mdl-button[disabled],
 button.mdl-button[disabled] i,
 a.mdl-button[disabled] i{
-	color: #BDBDBD !important;
+	color: #E0E0E0 !important;
 }
 
 button.mdl-button.mdl-button--raised[disabled],
 a.mdl-button.mdl-button--raised[disabled]{
 	cursor: no-drop !important;
-	background-color: #BDBDBD !important;
+	background-color: #E0E0E0 !important;
 }
 
 
@@ -958,7 +995,7 @@ button.mdl-button.mdl-button--raised[disabled],
 a.mdl-button.mdl-button--raised[disabled],
 button.mdl-button.mdl-button--raised[disabled] i,
 a.mdl-button.mdl-button--raised[disabled] i{
-	color: #757575 !important;
+	color: #E0E0E0 !important;
 }
 
 /* CARDS TABLES */
@@ -1023,4 +1060,107 @@ a.mdl-button.mdl-button--raised[disabled] i{
 
 .tooltip-inner{	
     background-color: #757575;	
+}
+
+/* TAB PANE IN CARD */
+.mdl-card__tab-pane{
+	padding: 0;
+}
+
+.mdl-card__tab-pane .nav.nav-tabs{
+    border-bottom: none;
+    background-color: #56Bc8a;
+}
+
+.mdl-card__tab-pane .nav.nav-tabs li a,
+.mdl-card__tab-pane .nav.nav-tabs li a:HOVER,
+.mdl-card__tab-pane .nav.nav-tabs li a:FOCUS,
+.mdl-card__tab-pane .nav.nav-tabs li a:ACTIVE{
+    margin: 0;
+	color: #FFFFFF; 
+	text-decoration: none;
+	text-transform: capitalize;
+	outline: none;
+	transition: background-color .5s ease;
+	border-color: transparent;
+}
+
+.mdl-card__tab-pane .nav-tabs>li:FIRST-CHILD>a{
+	border-top-left-radius: 0
+}
+
+.mdl-card__tab-pane .nav.nav-tabs li a:HOVER{
+	background-color: hsla(0,0%,100%,.4);
+	color: #FFFFFF
+}
+
+.mdl-card__tab-pane .nav.nav-tabs li.active a,
+.mdl-card__tab-pane .nav.nav-tabs li.active a:HOVER{
+	background-color: #FFFFFF;
+	color: #56BC8A;
+}
+
+.mdl-card__tab-pane .tab-content{
+	padding: 16px
+}
+
+/* LIMIT TEXT */
+.mdl-textfield__limit {
+	color: #9E9E9E;
+	position: absolute;
+	font-size: 12px;
+	margin-top: 3px;
+	visibility: visible;
+	display: block;
+	right: 0;
+}
+
+.mdl-textfield.is-invalid .mdl-textfield__limit,
+.mdl-textfield.is-invalid.is-focused .mdl-textfield__limit {
+    color: #d50000;
+}
+
+/* BREADCUMB */
+.breadcrumb{
+	margin-bottom: 15px
+}
+
+.breadcrumb li a,
+.breadcrumb li a:FOCUS,
+.breadcrumb li a:HOVER {
+	color: #757575;
+	cursor: default;
+}
+
+.breadcrumb>li:NTH-CHILD(1) a{
+	font-weight: 600
+}
+
+.breadcrumb>li:NTH-CHILD(2):BEFORE{
+	content: ':';
+    margin-right: 10px;
+    padding: 0;
+}
+
+/* EMPTY STATE */
+.mdl-empty{
+	width: 100%;
+	max-width: 750px;
+	margin: auto;
+	padding: 5% 0;
+	text-align: center;
+}
+
+.mdl-empty i{
+	font-size: 102px;
+	margin-bottom: 5px;
+}
+
+.mdl-empty p{
+    width: 100%;
+    line-height: initial;
+    font-size: 12px;
+    margin: 0;
+    margin-bottom: 5px;
+    color: #757575;
 }

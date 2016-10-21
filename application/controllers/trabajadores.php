@@ -10,7 +10,8 @@ class Trabajadores extends CI_Controller {
         $this->load->model('m_utils');
     }
     
-	public function index(){
+	public function index()
+	{
 	    $idUsuario     = $this->session->userdata('idUsuario');
 	    if($idUsuario != null){
 	        $nombreUsuario = $this->session->userdata('nombreUsuario');
@@ -27,18 +28,12 @@ class Trabajadores extends CI_Controller {
 	        $nav['modulos'] = $perm;
 	        $nav['view'] = 'Trabajadores';
 	        
-	        $navegador = $this->load->view('navegador', $nav, true);
-	        $data['navegador'] = $navegador;
-	        $this->load->view('trabajadores', $data);  
+	        $navegador = $this->load->view('v_navegador', $nav, true);
+	        $data['navegador'] = $navegador;  
+	        
+	        $this->load->view('v_trabajadores', $data);
 	    } else{
 	        redirect('','refresh');
 	    }
-	}
-	function buildComboSexo($id = null){
-		
-	}
-
-	function accionFormulario(){
-		$accion = _post('accionGlobal');
 	}
 }

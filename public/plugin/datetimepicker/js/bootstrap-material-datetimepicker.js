@@ -252,7 +252,7 @@
                          '<button class="dtp-btn-now mdl-button btn-flat hidden">' + this.params.nowText + '</button>' +
                          '<button class="dtp-btn-clear mdl-button btn-flat hidden">' + this.params.clearText + '</button>' +
                          '<button class="dtp-btn-cancel mdl-button btn-flat">' + this.params.cancelText + '</button>' +
-                         '<button class="dtp-btn-ok mdl-button btn-flat">' + this.params.okText + '</button>' +
+                         '<button class="dtp-btn-ok mdl-button mdl-button--raised btn-flat">' + this.params.okText + '</button>' +
                          '<div class="clearfix"></div>' +
                          '</div>' +
                          '</div>' +

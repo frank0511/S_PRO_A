@@ -34,10 +34,10 @@ class Reportes extends CI_Controller {
                                   <a href="#tab-4" class="mdl-layout__tab">Cotizaciones</a>
                                 </div>';
 	         
-	        $navegador = $this->load->view('navegador', $nav, true);
+	        $navegador = $this->load->view('v_navegador', $nav, true);
 	        $data['navegador'] = $navegador;	    
 	        
-	        $this->load->view('index', $data);
+	        $this->load->view('v_index', $data);
 	    } else{
 	        redirect('','refresh');
 	    }

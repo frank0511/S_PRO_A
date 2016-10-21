@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 	{
 	    $idUsuario     = $this->session->userdata('idUsuario');
 	    if($idUsuario == null){
-	        $this->load->view('login');
+	        $this->load->view('v_login');
 	    } else{
 	        redirect('index','refresh');
 	    }

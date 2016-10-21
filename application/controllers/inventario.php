@@ -29,13 +29,13 @@ class Inventario extends CI_Controller {
 	        $nav['modulos'] = $perm;
 	        $nav['view'] = 'Inventario';        
 	        
-	        $navegador = $this->load->view('navegador', $nav, true);	
+	        $navegador = $this->load->view('v_navegador', $nav, true);	
 	        $data['navegador'] = $navegador;	    
 
 	        $productos                 = $this->m_movimiento->getInventario();
 	        $data['tableInventario']   = $this->crearTablaInventarioHTML($productos);
 	        
-	        $this->load->view('inventario', $data);
+	        $this->load->view('v_inventario', $data);
 	    } else{
 	        redirect('','refresh');
 	    }

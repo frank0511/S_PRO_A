@@ -27,6 +27,17 @@ class M_utils extends CI_Model
         return $result->result();
     }
     
+
+
+    function getTipoDocumento()
+    {
+        $sql = 'SELECT  idTipoDocumento,
+                        descripcion
+                  FROM tipodocumento';
+        $result =  $this->db->query($sql);
+        return $result->result();
+    }
+    
     function getRolByUser($idUsuario)
     {
         $sql = 'SELECT idRol

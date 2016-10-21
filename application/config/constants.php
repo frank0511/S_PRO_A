@@ -85,7 +85,7 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 defined('CLAVE_ENCRYPT')      OR define('CLAVE_ENCRYPT','1029384756123456');
 /* HEADER PAGE VIEW */
-defined('COLOR_BARRA_ANDROID')  OR define('COLOR_BARRA_ANDROID', '#009688');
+defined('COLOR_BARRA_ANDROID')  OR define('COLOR_BARRA_ANDROID', '#56BC8A');
 
 /* RUTAS PUBLIC */
 defined('RUTA_CSS')     OR define('RUTA_CSS'    , 'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).'/S_PRO_A/public/css/');

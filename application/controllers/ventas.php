@@ -42,10 +42,10 @@ class Ventas extends CI_Controller {
 	        $nav['modulos'] = $perm;
 	        $nav['view']    = 'Ventas';
 	         
-	        $navegador = $this->load->view('navegador', $nav, true);
+	        $navegador = $this->load->view('v_navegador', $nav, true);
 	        $data['navegador'] = $navegador;
 	        
-	        $this->load->view('ventas', $data);
+	        $this->load->view('v_ventas', $data);
 	    } else{
 	        redirect('','refresh');
 	    }

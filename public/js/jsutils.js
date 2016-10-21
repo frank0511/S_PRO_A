@@ -131,22 +131,151 @@ function initSelect(){
 	}
 }
 
-//ADD COLOR ICON FOR INPUT/BUTTON GROUP
-/*$('.mdl-group__icon .mdl-textfield__input').click(function() {
-	var idInput 	= $(this).attr('id');	
-	var colorInput 	= $('.is-focused .mdl-textfield__label').css('color');
-	$('.mdl-group__icon .mdl-textfield__input').closest('.mdl-group__icon').find('i.mdi').removeAttr('style');
-	$('#'+idInput).closest('.mdl-group__icon').find('i.mdi').css('color', colorInput);
-});*/
+//INIT TOOLTIP
+function initTooltip(){
+	$('[data-toggle="tooltip"]').tooltip();
+}
 
+//INIT LIMIT INPUTS
+function initLimitInputs() {
+	for(var i = 0; i < arguments.length; i++) {
+		var text 		= arguments[i];
+		var textArea	= $('#'+text);
+		var inputLength	= textArea.val().length;
+		var spanValue	= $('.mdl-textfield__limit[for="'+text+'"]');
+		var maxValInput = spanValue.attr('data-limit');
+		spanValue.html(inputLength + "/" + maxValInput);
+	}
+}
+
+//INIT DATEPICKER FOR DAYS
+//SET FECHA/HOURS
+function setValueDate(inputNew) {
+	$('#'+inputNew.data('time')).val(inputNew.val());
+}
+
+//DAYS
+function initCalendarDays(id){
+	$("#"+id).bootstrapMaterialDatePicker({ 
+		weekStart : 0, 
+		date	: true, 
+		time	: false, 
+		format 	: 'DD/MM/YYYY'
+	});
+}
+
+function initButtonCalendarDays() {
+	for(var i = 0; i < arguments.length; i++) {
+		var text 		= arguments[i];
+		var id 			= $("#"+text);
+		var newInput	= null;
+		var iconButton 	= id.closest('.mdl-group__icon').find('.mdl-button');
+		iconButton.click(function(){
+			newInput = text+'ForCalendar';
+			if ( $('#'+newInput).length < 1 ) {
+				$('<input>').attr({
+				    type		: 'text',
+				    id			: newInput,
+				    name		: newInput,
+				    'data-time'	: text,
+				    onchange 	: 'setValueDate($(this))',
+				    style		: 'position: absolute; top: 40px; border: transparent; color: transparent; z-index: -4'
+				}).appendTo(iconButton);
+				initCalendarDays(newInput);
+			}
+			$("#"+newInput).focus();			
+		});		
+		var valueNewInput = $("#"+newInput).val();   
+		id.text(valueNewInput);
+	}
+}
+
+//DAYS 18 YEARS AGO
+function initCalendarMinDate18YearsAgo(id){
+	var date = new Date();
+	var year	= date.getFullYear() - 18;
+	var mounth 	= date.getMonth();
+	var today	= date.getDate();
+	
+	$("#"+id).bootstrapMaterialDatePicker({ 
+		weekStart : 0, 
+		date	: true, 
+		time	: false, 
+		format 	: 'DD/MM/YYYY',
+		maxDate : new Date(year, mounth, today)
+	});
+}
+
+function initButtonCalendarMinDate18YearsAgo() {
+	for(var i = 0; i < arguments.length; i++) {
+		var text 		= arguments[i];
+		var id 			= $("#"+text);
+		var newInput	= null;
+		var iconButton 	= id.closest('.mdl-group__icon').find('.mdl-button');
+		iconButton.click(function(){
+			newInput = text+'ForCalendar';
+			if ( $('#'+newInput).length < 1 ) {
+				$('<input>').attr({
+				    type		: 'text',
+				    id			: newInput,
+				    name		: newInput,
+				    'data-time'	: text,
+				    onchange 	: 'setValueDate($(this))',
+				    style		: 'position: absolute; top: 40px; border: transparent; color: transparent; z-index: -4'
+				}).appendTo(iconButton);
+				initCalendarDays(newInput);
+			}
+			$("#"+newInput).focus();			
+		});		
+		var valueNewInput = $("#"+newInput).val();   
+		id.text(valueNewInput);
+	}
+}
+
+//HOURS
+function initCalendarHours(id){
+	$("#"+id).bootstrapMaterialDatePicker({  
+		date 	: false, 
+		time	: true,
+		format	: 'h:mm a'
+	});
+}
+
+function initButtonCalendarHours() {
+	for(var i = 0; i < arguments.length; i++) {
+		var text 		= arguments[i];
+		var id 			= $("#"+text);
+		var newInput	= null;
+		var iconButton 	= id.closest('.mdl-group__icon').find('.mdl-button');
+		iconButton.click(function(){
+			newInput = text+'ForCalendar';
+			if ( $('#'+newInput).length < 1 ) {
+				$('<input>').attr({
+				    type		: 'text',
+				    id			: newInput,
+				    name		: newInput,
+				    'data-time'	: text,
+				    onchange 	: 'setValueDate($(this))',
+				    style		: 'position: absolute; top: 40px; border: transparent; color: transparent; z-index: -4'
+				}).appendTo(iconButton);
+				initCalendarHours(newInput);
+			}
+			$("#"+newInput).focus();
+			var valueNewInput = $("#"+newInput).val();
+			id.html(valueNewInput);
+		});
+	}
+}
+
+//ADD COLOR ICON FOR INPUT/BUTTON GROUP
 function focusAddIconColor(id, element){
 	var forElement = null; 
 	if( element == 1 ){
 		forElement = $(id).attr('id');
 	} else {
 		forElement = $(id).closest('.mdl-group__icon').find('select').attr('data-id');
-		console.log(id);
 	}
+	
 	$('.mdl-group__icon').removeClass('active');
 	$(id).closest('.mdl-group__icon').addClass('active');
 }
@@ -169,10 +298,11 @@ $(window).keyup(function (e) {
     var focus		 = $(document.activeElement);
     var focusElement = null;
     var focusType	 = null;
-    console.log(focus);
+    var focusArea	 = null;
     
     if ( focus.hasClass('mdl-textfield__input')) {
     	focusElement = focus;
+    	focusArea	 = focus;
     	focusType 	 = 1;
     } else if ( focus.hasClass('mdl-button__select') ) {
     	focusElement = focus;
@@ -189,12 +319,31 @@ $(window).keyup(function (e) {
         	focusAddIconColor(focusElement, focusType);  
     	}
     }
+    
+    if ( focusArea != null ) {
+    	if ( focusArea.parent('.mdl-textfield').find('.mdl-textfield__limit') != 0 ) {
+    		var idTextArea  	= focusArea.attr('id');
+        	var textAreaLength 	= focusArea.val().length;
+        	var spanValue		= $('.mdl-textfield__limit[for="'+idTextArea+'"]');
+        	var maxValText		= spanValue.attr('data-limit');
+        	spanValue.html(textAreaLength + "/" + maxValText);
+        	
+        	if ( textAreaLength > maxValText ) {
+        		focusArea.closest('.mdl-textfield').addClass('is-invalid');
+        		focusAddIconColor(focusArea, focusType);
+        	} else {
+        		focusAddIconColor(focusElement, focusType);
+        	}
+    	}
+    }
 });
 
-function abrirCerrarModal(idModal){
+// OPEN/CLOSE MODAL
+function openCloseModal(idModal){
 	$('#'+idModal).modal('toggle');
 }
 
+// MOSTRAR NOTIFICACION
 function mostrarNotificacion(tipo, msj, cabecera) {
 	if (tipo == 'error') {
 		toastr.error(msj, cabecera, {
@@ -223,20 +372,54 @@ function mostrarNotificacion(tipo, msj, cabecera) {
 	}
 }
 
-function setearInput(idInput, val){
+
+// SET INPUTS/COMBOS/VALUE
+function setearInput(idInput, val, previo = null, disabled = null, clase = 'divInput'){
 	$("#"+idInput).val(val);
-	if(val === ""){
-		$("#"+idInput).parent().removeClass("is-dirty");
-		$('#'+idInput).parent().removeClass('is-focused');
-	}else if(val != null){
+	if(val != null){
 		$("#"+idInput).parent().addClass("is-dirty");
 	}else{
 		$("#"+idInput).parent().removeClass("is-dirty");
-		$('#'+idInput).parent().removeClass('is-focused');
+	}
+	if(previo != null){
+		$("#"+idInput).attr("val-previo", previo);
+	}
+
+	if(disabled != null){
+		$('#'+idInput).attr("disabled", true);
+	} else {
+		$('#'+idInput).attr("disabled", false);
+		$('.'+clase).removeClass('is-disabled');
 	}
 }
 
-function setearCombo(idCombo, val){
+function setearCombo(idCombo, val, previo = null, disabled = null){
+	if(previo != null){
+		$("#"+idCombo).attr("val-previo", previo);
+	}
+	if(disabled != null){
+		disableEnableCombo(idCombo, true);
+	} else if (disabled == null){
+		disableEnableCombo(idCombo, false);
+	}
 	$("#"+idCombo).val(val);
 	$("#"+idCombo).selectpicker('render');
+}
+
+function setValor(idNameCombo,valores) {
+	$('select[name='+idNameCombo+']').val(valores);
+	$('#'+idNameCombo).selectpicker('refresh');
+}
+
+// DISABLED INPUT/COMBO
+function disableEnableCombo(idCombo, disaEna){
+	$('#'+idCombo).prop('disabled', disaEna);
+	$('#'+idCombo).selectpicker('refresh');
+}
+
+function disableEnableInput(idInput, tof){
+	$('#'+idInput).attr("disabled", tof);
+	if(tof == false){
+		$('.divInput').removeClass('is-disabled');
+	}
 }

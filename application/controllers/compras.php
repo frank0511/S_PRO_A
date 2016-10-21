@@ -28,10 +28,10 @@ class Compras extends CI_Controller {
 	        $nav['modulos'] = $perm;
 	        $nav['view']    = 'Compras';   
 	        
-	        $navegador = $this->load->view('navegador', $nav, true);	
+	        $navegador = $this->load->view('v_navegador', $nav, true);	
 	        $data['navegador'] = $navegador;    
 	        
-	        $this->load->view('index', $data);
+	        $this->load->view('v_index', $data);
 	    } else{
 	        redirect('','refresh');
 	    }

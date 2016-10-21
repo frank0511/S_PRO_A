@@ -31,7 +31,7 @@ class Inventario_detalle extends CI_Controller {
 	        $nav['modulos'] = $perm;
 	        $nav['view'] = 'Detalles del Producto';
 	    
-	        $navegador = $this->load->view('navegador', $nav, true);	
+	        $navegador = $this->load->view('v_navegador', $nav, true);	
 	        $data['navegador'] = $navegador;	    
 
 	        $entradas              = $this->m_movimiento->getEntradasByProducto($idProducto);
@@ -40,7 +40,7 @@ class Inventario_detalle extends CI_Controller {
 	        $salidas               = $this->m_movimiento->getSalidasByProducto($idProducto);
 	        $data['tableSalidas']  = $this->crearTablaSalidasHTML($salidas);
 	        
-	        $this->load->view('inventario_detalle', $data);
+	        $this->load->view('v_inventario_detalle', $data);
 	    } else{
 	        redirect('','refresh');
 	    }
