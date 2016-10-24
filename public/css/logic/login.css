@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 a {
-	color: #bbb;
+	color: #0011fd;
 	text-decoration: none;
 }
 fieldset {border: none;}
@@ -40,7 +40,7 @@ button {
 .login-form, .signup-form {
 	width: 250px;
 	padding: 16px;
-	background: #69F0AE;
+	background: #0011fd;
 	border-radius: 5px;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px
 		rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);	
@@ -91,16 +91,16 @@ input:not([type="submit"]) {
 }
 .login-button-active {
 	animation: buttonsMoveToRight .3s linear forwards;
-	color: #FFF
+	color: #0011fd
 }
 .signup-button-active {
 	animation: buttonsMoveToLeft .3s linear forwards;
-	color: #fff;
+	color: #0011fd;
 }
 .login-form.login-button-active label, .login-form.login-button-active input, .login-form.login-button-active span.mdl-textfield__error, .login-form.login-button-active button {animation: fielsetSlideToRight .5s linear 0.25s forwards;}
 .signup-form.signup-button-active label, .signup-form.signup-button-active input, .signup-form.signup-button-active span.mdl-textfield__error, .signup-form.signup-button-active button {animation: fieldsetSlideToLeft .5s linear 0.25s forwards;}
 .login-form button, .signup-form button {
-	background-color: #00C853;
+	background-color: #0011fd;
 	color: #FFF;
 	font-weight: 600;
 	float: right;
@@ -227,7 +227,7 @@ input:not([type="submit"]) {
 		transform: translate(-100px, 20px);
 		z-index: 1;
 		height: 280px;
-		background-color: #69F0AE;
+		background-color: #b3d4fc;
 	}
 }
 @keyframes loginToTop {

@@ -23,7 +23,7 @@
 </ul>
 
 <div class="mdl-layout__drawer">
-	<span class="mdl-layout-title"><a href="<?php echo base_url()?>">Agrofer</a></span>
+	<span class="mdl-layout-title"><a href="<?php echo base_url()?>">SGPA</a></span>
 	<nav class="mdl-navigation">
 	   <?php echo $modulos ?>
 	</nav>

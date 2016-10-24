@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Ingresar - Agrofer</title>
+        <title>Ingresar - SGPA</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
         <meta name="viewport"               content="width=device-width, initial-scale=1.0">
-        <meta name="description"            content="Agrofer">
+        <meta name="description"            content="SGPA">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color"            content="<?php echo COLOR_BARRA_ANDROID?>">
         
@@ -59,7 +59,7 @@
     			</div>
     		</section>
     	</main>
-    	
+    	 
     	<script type="text/javascript" src="<?php echo RUTA_PLUGINS?>jquery/jquery.min.js"></script>
     	<script type="text/javascript" src="<?php echo RUTA_PLUGINS?>mdl/js/material.min.js"></script>
     	<script type="text/javascript" src="<?php echo RUTA_PLUGINS?>pace/js/pace.min.js"></script>

@@ -114,7 +114,7 @@ a, a:FOCUS, a:ACTIVE, a:HOVER, a:VISITED {
 }
 
 .mdl-textfield .mdl-textfield__input{
-	border-bottom-color:  #BDBDBD;
+	border-bottom-color:  #0011fd;
 	color: #757575;
 	font-weight: 400
 }
@@ -126,11 +126,11 @@ a, a:FOCUS, a:ACTIVE, a:HOVER, a:VISITED {
 }
 
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
-	color:  #BDBDBD !important;
+	color:  #0011fd !important;
 }
 
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label {
-	color: #56BC8A !important
+	color: #0011fd !important
 }
 
 .mdl-textfield.is-invalid .mdl-textfield__input,
@@ -149,12 +149,12 @@ a, a:FOCUS, a:ACTIVE, a:HOVER, a:VISITED {
 .mdl-textfield__label:after,
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after,
 .mdl-tabs__tab .mdl-tabs__ripple-container .mdl-ripple{
-	background-color: #56BC8A
+	background-color: #0011fd
 }
 
 .mdl-tabs.is-upgraded .mdl-tabs__tab:HOVER,
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active{
-	color: #56BC8A;
+	color: #0011fd;
 }
 
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active{
@@ -679,7 +679,7 @@ header ~ .mdl-menu__container.is-upgraded.is-visible {
 }
 
 .mdl-layout__header-row .mdl-layout-title a:BEFORE{
-	content: 'Agrofer'
+	content: 'SGPA'
 }
 
 .mdl-layout__header-row .mdl-layout-title label{
@@ -1117,7 +1117,7 @@ a.mdl-button.mdl-button--raised[disabled] i{
 
 .mdl-textfield.is-invalid .mdl-textfield__limit,
 .mdl-textfield.is-invalid.is-focused .mdl-textfield__limit {
-    color: #d50000;
+    color: #0011fd;
 }
 
 /* BREADCUMB */
