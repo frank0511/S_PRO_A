@@ -28,10 +28,12 @@ class Trabajadores extends CI_Controller {
 	        $nav['modulos'] = $perm;
 	        $nav['view'] = 'Trabajadores';
 	        
-	        $navegador = $this->load->view('v_navegador', $nav, true);
-	        $data['navegador'] = $navegador;
-	        $data['optRoles'] = $this->buildOptRoles();  
-	        $data['optSexo'] = $this->buildOptSexo();  
+	        $navegador         		 = $this->load->view('v_navegador', $nav, true);
+	        $data['navegador'] 		 = $navegador;
+	        $data['optRoles']  		 = $this->buildOptRoles();  
+	        $data['optSexo']   	  	 = $this->buildOptSexo();  
+	        $data['optEstado']       = $this->buildOptEstado();  
+	        $data['optDepartamento'] = $this->buildOptDepartamento(); 
 	        
 	        $this->load->view('v_trabajadores', $data);
 	    } else{
@@ -60,17 +62,44 @@ class Trabajadores extends CI_Controller {
         return $opt;
     }
 
-    function buildOptSexo($idSexo  = null){
+    function buildOptEstado($Estado  = null){
             $opt = null;            
-            $idSexoCrypt = _encodeCI(1);
-            $selected = (1 == $idSexo) ? 'selected' : null;
-            $opt .= '<option value="' . $idSexoCrypt . '" ' . $selected . '>Masculino </option>';
-            $idSexoCrypt = _encodeCI(2);
-            $selected = (2 == $idSexo) ? 'selected' : null;
-            $opt .= '<option value="' . $idSexoCrypt . '" ' . $selected . '>Femenino</option>';
+            $EstadoCrypt = _encodeCI('s');
+            $selected = ('s' == $Estado) ? 'selected' : null;
+            $opt .= '<option value="' . $EstadoCrypt . '" ' . $selected . '>Soltero</option>';
+            $EstadoCrypt = _encodeCI('c');
+            $selected = ('c' == $Estado) ? 'selected' : null;
+            $opt .= '<option value="' . $EstadoCrypt . '" ' . $selected . '>Casado</option>';
         return $opt;
     }
-    
+
+    function buildOptDepartamento($idDepartamento  = null){
+        $listaDepartamento = $this->m_utils->getAllDepartamentos();
+        $opt = null;
+        foreach ($listaDepartamento as $departamento) {
+            $idDepartamentoCrypt = _encodeCI($departamento->flag_Departamento);
+            $selected = ($departamento->flag_Departamento == $idDepartamento) ? 'selected' : null;
+            $opt .= '<option value="' . $idDepartamentoCrypt . '" ' . $selected . '>' . $departamento->departamento . '</option>';
+        }
+        return $opt;
+    }
+    function buildOptProvincia(){
+    	try {
+	    	$idDepartamento = _decodeCI(_post('flag_Dep'));
+    		if ($idDepartamento == null) {
+                throw new Exception('Seleccione un Departamento');
+            }
+	        $listaProvincia = $this->m_utils->getAllProvincias($idDepartamento);
+	        $opt = null;
+	        foreach ($listaProvincia as $provincia) {
+	            $idProvinciaCrypt = _encodeCI($provincia->flag_Provincia);
+	            $opt .= '<option value="' . $idProvinciaCrypt . '">' . $provincia->provincia . '</option>';
+	        }
+         	$data['optProvincias'] = $opt;
+        }catch (Exception $e) {}
+        echo json_encode(array_map('utf8_encode', $data));
+    }
+
 	function accionTrabajador(){
 		$accion 	  = _post('accionGlobal');
 		$nombre 	  = _post('nombre');

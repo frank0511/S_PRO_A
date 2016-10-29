@@ -49,25 +49,23 @@ class M_utils extends CI_Model
     
     function getAllDepartamentos()
     {
-        $sql = "SELECT  flag_Dep,
-                        Departamento
-                  FROM  localizacion
-              GROUP BY  flag_Dep";
+        $sql = "SELECT  flag_Departamento,
+                        departamento
+                  FROM  ubigeo
+              GROUP BY  flag_Departamento";
         $result = $this->db->query($sql);
         return $result->result();
     }
     
     function getAllProvincias($flag_Dep)
     {
-        $sql = "SELECT  flag_Prov,
-                        Provincia
-                  FROM  localizacion
-                 WHERE  flag_Dep = ?
-                   AND  flag_Prov != 0
-              GROUP BY  flag_Prov";
-        $result = $this->db->query($sql, array(
-            $flag_Dep
-        ));
+        $sql = "SELECT  flag_Provincia,
+                        provincia
+                  FROM  ubigeo
+                 WHERE  flag_Departamento = ?
+                   AND  flag_Provincia != 0
+              GROUP BY  flag_Provincia";
+        $result = $this->db->query($sql, array($flag_Dep));
         return $result->result();
     }
     

@@ -11,6 +11,7 @@ function accionModal(accion){
 	accionGlobal = accion;
 	openCloseModal('modalTrabajador');
 }
+
 function functionTrabajador(){
 	var nombre       = $('#nombresTrabajador').val();
 	var ape_pate     = $('#apePaternoTrabajador').val();
@@ -55,4 +56,20 @@ function functionTrabajador(){
 			data = JSON.parse(data);
 		});
 	});
+}
+
+function getProvinciasByDepartamento() {
+	var flag_Dep = $('#departamentoTrabajador option:selected').val();
+	$.ajax({
+		data : {
+			flag_Dep : flag_Dep
+		},
+		url : 'trabajadores/buildOptProvincia',
+		type : 'POST',
+		async : false
+	}).done(
+			function(data) {
+				data = JSON.parse(data);
+				$('#provinciaTrabajador').append(data.optProvincias);
+			});
 }

@@ -124,6 +124,7 @@
         					               <i class="mdi mdi-gavel"></i>
         					               <select class="mdl-select form-control" id="estadoCivilTrabajador">
                     			                <option value="0">Seleccione estado civil</option>
+                                                <?php echo $optEstado?>
                     			           </select>
         					           </div>
                                        <div class="col-sm-6 col-md-4 mdl-group__icon mdl-group__select">
@@ -143,8 +144,9 @@
             				           </div>
             				           <div class="col-sm-6 col-md-4 mdl-group__icon mdl-group__select">
         					               <i class="mdi mdi-map"></i>
-        					               <select class="mdl-select form-control" id="departamentoTrabajador">
+        					               <select class="mdl-select form-control" id="departamentoTrabajador" onchange="getProvinciasByDepartamento();">
                     			                <option value="0">Seleccione departamento</option>
+                                                <?php echo $optDepartamento?>
                     			           </select>
         					           </div>
             				           <div class="col-sm-6 col-md-4 mdl-group__icon mdl-group__select">

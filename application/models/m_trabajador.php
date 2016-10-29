@@ -6,5 +6,4 @@ class M_movimiento extends CI_Model
     {
         parent::__construct();
     }
-
 }
