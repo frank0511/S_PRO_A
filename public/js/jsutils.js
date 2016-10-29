@@ -423,3 +423,11 @@ function disableEnableInput(idInput, tof){
 		$('.divInput').removeClass('is-disabled');
 	}
 }
+
+function getFechaHoy_dd_mm_yyyy() {
+	var d = new Date();
+	var mes = (d.getMonth()+1+'').length === 1 ? '0'+(d.getMonth()+1) : (d.getMonth()+1);
+	var dia = (d.getDate()+'').length === 1 ? '0'+d.getDate() : (d.getDate());
+	var hoyDia = dia+'/'+mes+'/'+d.getFullYear();
+	return hoyDia;
+}

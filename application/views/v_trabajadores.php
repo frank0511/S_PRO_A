@@ -124,8 +124,15 @@
         					               <select class="mdl-select form-control" id="estadoCivilTrabajador">
                     			                <option value="0">Seleccione estado civil</option>
                     			           </select>
-        					           </div>            					       
-            					       <div class="col-sm-12 mdl-group__icon">
+        					           </div>
+                                       <div class="col-sm-6 col-md-4 mdl-group__icon mdl-group__select">
+                                                <i class="mdi mdi-today"></i>
+                                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                                <input class="mdl-textfield__input" type="text" id="fecNac" data-inputmask="'alias': 'date'"/>
+                                                <label class="mdl-textfield__label" for="fecNac">Fecha Nacimiento</label>
+                                            </div>                                       
+                                       </div>            					       
+            					       <div class="col-sm-6 col-md-8 mdl-group__icon mdl-group__select">
         					               <i class="mdi mdi-gps_fixed"></i>
             				               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     			                <input class="mdl-textfield__input" type="text" id="direccionTrabajador" name="direccionTrabajador" pattern="^.*(?=.*[0-9])(?=.*[a-zA-ZñÑ\s]).*$">
@@ -153,7 +160,7 @@
                                </div>
                                <div id="tab-representate" class="tab-pane fade in">
                                    <div class="row">
-        					           <div class="col-sm-6 col-md-4 mdl-group__icon">
+        					           <div class="col-sm-6 col-md-6 mdl-group__icon">
         					               <i class="mdi mdi-phone"></i>
             				               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     			                <input class="mdl-textfield__input" type="text" id="telefonoTrabajador" name="telefonoTrabajador" pattern="^(0[1-9]{1}[1-9]{7})|(0[1-9]{2}[1-9]{6})$">
@@ -161,14 +168,14 @@
                                                 <span class="mdl-textfield__error">Ingrese solo n&uacute;meros. Ejm.: 043444486</span>
                     			           </div>
             				           </div>
-            					       <div class="col-sm-6 col-md-4 mdl-group__icon">
+            					       <div class="col-sm-6 col-md-6 mdl-group__icon">
             				               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     			                <input class="mdl-textfield__input" type="text" id="celularTrabajador" name="celularTrabajador" pattern="^(0[1-9]{1,2}[1-9]{9})$">
                     			                <label class="mdl-textfield__label" for="celularTrabajador">Celular</label>
                                                 <span class="mdl-textfield__error">Ingrese solo n&uacute;meros. Ejm.: 051999999999</span>
                     			           </div>
             				           </div>
-            					       <div class="col-sm-6 col-md-4 mdl-group__icon">
+            					       <div class="col-sm-6 col-md-6 mdl-group__icon">
         					               <i class="mdi mdi-email"></i>
             				               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     			                <input class="mdl-textfield__input" type="text" id="correoTrabajador" pattern="[a-zA-Z0-9]+(?:(\.|_)[A-Za-z0-9!#$%&'*+/=?^`{|}~-]+)*@(?!([a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.))(?:[A-Za-z0-9](?:[a-zA-Z0-9-]*[A-Za-z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?">
@@ -176,12 +183,6 @@
                                                 <span class="mdl-textfield__error">Ingrese correctamente su correo.</span>
                     			           </div>
             				           </div>
-            				           <div class="col-sm-6 mdl-group__icon mdl-group__select">
-            				               <i class="mdi mdi-domain"></i>
-        					               <select class="mdl-select form-control" id="sucursalTrabajador">
-                    			                <option value="0">Seleccione sucursal a laboral</option>
-                    			           </select>
-        					           </div>
             				           <div class="col-sm-6 mdl-group__icon mdl-group__select">
             				               <i class="mdi mdi-business_center"></i>
         					               <select class="mdl-select form-control" id="cargoTrabajador">
@@ -202,7 +203,7 @@
     					</div>
     					<div class="mdl-card__actions">
                             <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-dismiss="modal">Cerrar</button>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised">Aceptar</button>
+                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised" onclick="functionTrabajador();">Aceptar</button>
                         </div>
                     </div>
                 </div>
@@ -214,13 +215,16 @@
                 <button class="mfb-component__button--main" >
                     <i class="mfb-component__main-icon--resting mdi mdi-add"></i>
                 </button>
-                <button class="mfb-component__button--main" data-mfb-label="Nuevo Trabajador" onclick="openCloseModal('modalTrabajador')">
+                <button class="mfb-component__button--main" data-mfb-label="Nuevo Trabajador" onclick="accionModal(registrar)">
                     <i class="mfb-component__main-icon--active mdi mdi-person_add"></i>
                 </button>
             </li>
         </ul>   
         
         <script type="text/javascript" src="<?php echo RUTA_PLUGINS?>jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo RUTA_PLUGINS?>Inputmask/js/inputmask.js"></script>
+        <script type="text/javascript" src="<?php echo RUTA_PLUGINS?>Inputmask/js/inputmask.date.extensions.js"></script>
+        <script type="text/javascript" src="<?php echo RUTA_PLUGINS?>Inputmask/js/jquery.inputmask.js"></script>
     	<script type="text/javascript" src="<?php echo RUTA_PLUGINS?>bootstrap/js/bootstrap.min.js"></script>
     	<script type="text/javascript" src="<?php echo RUTA_PLUGINS?>bootstrapSelect/js/bootstrap-select.min.js"></script>
     	<script type="text/javascript" src="<?php echo RUTA_PLUGINS?>bootstrapSelect/js/i18n/defaults-es_CL.min.js"></script>

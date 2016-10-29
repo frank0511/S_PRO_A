@@ -36,4 +36,8 @@ class Trabajadores extends CI_Controller {
 	        redirect('','refresh');
 	    }
 	}
+
+	function accionTrabajador(){
+		
+	}
 }
