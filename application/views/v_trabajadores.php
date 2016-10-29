@@ -117,6 +117,7 @@
         					               <i class="mdi mdi-wc"></i>
         					               <select class="mdl-select form-control" id="sexoTrabajador">
                     			                <option value="0">Seleccione sexo</option>
+                                                <?php echo $optSexo?>
                     			           </select>
         					           </div>
             				           <div class="col-sm-6 col-md-4 mdl-group__icon mdl-group__select">
@@ -187,6 +188,7 @@
             				               <i class="mdi mdi-business_center"></i>
         					               <select class="mdl-select form-control" id="cargoTrabajador">
                     			                <option value="0">Seleccione cargo a laboral</option>
+                                                <?php echo $optRoles?>
                     			           </select>
         					           </div>
             				           <div class="col-sm-12 mdl-group__icon">
@@ -215,7 +217,7 @@
                 <button class="mfb-component__button--main" >
                     <i class="mfb-component__main-icon--resting mdi mdi-add"></i>
                 </button>
-                <button class="mfb-component__button--main" data-mfb-label="Nuevo Trabajador" onclick="accionModal(registrar)">
+                <button class="mfb-component__button--main" data-mfb-label="Nuevo Trabajador" onclick="accionModal('registrar')">
                     <i class="mfb-component__main-icon--active mdi mdi-person_add"></i>
                 </button>
             </li>

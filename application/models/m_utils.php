@@ -100,5 +100,11 @@ class M_utils extends CI_Model
         ));
         return $result->row()->idLocalizacion;
     }
+    function getAllRoles(){
+      $sql = "SELECT  idRol, nombreRol
+                  FROM  rol";
+        $result = $this->db->query($sql);
+        return $result->result();
+    }
 }    
 

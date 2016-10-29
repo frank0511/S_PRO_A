@@ -2,14 +2,14 @@ function init(){
 	initSelect();
 	initTooltip();
 	initLimitInputs('observacionesTrabajador');
-	$(":input").inputmask();
+    $(":input").inputmask();
     var hoy = getFechaHoy_dd_mm_yyyy();
     $("#fecNac").val(hoy);
 }
 var accionGlobal = "";
 function accionModal(accion){
 	accionGlobal = accion;
-	openCloseModal('modalTrabajador')
+	openCloseModal('modalTrabajador');
 }
 function functionTrabajador(){
 	var nombre       = $('#nombresTrabajador').val();
@@ -47,7 +47,7 @@ function functionTrabajador(){
 			          celular      : celular,
 			          correo       : correo,
 			          cargo        : cargo,
-			          observacion  : observacion}},
+			          observacion  : observacion},
 			url   : 'trabajadores/accionTrabajador',
 			type  : 'POST',
 			async : true
