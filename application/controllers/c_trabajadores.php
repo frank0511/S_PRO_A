@@ -101,7 +101,24 @@ class C_Trabajadores extends CI_Controller {
     }
 
     function buildOptDistrito(){
-        
+        try {
+            $idDepartamento = _decodeCI(_post('flag_Dep'));
+            $idProvincia = _decodeCI(_post('flag_Prov'));
+            if ($idDepartamento == null) {
+                throw new Exception('Seleccione un Departamento');
+            }
+            if ($idProvincia == null) {
+                throw new Exception('Seleccione un Departamento');
+            }
+            $listaDistrito = $this->m_utils->getAllDistritos($idDepartamento, $idProvincia);
+            $opt = null;
+            foreach ($listaDistrito as $distrito) {
+                $idDistritoCrypt = _encodeCI($distrito->flag_Distrito);
+                $opt .= '<option value="' . $idDistritoCrypt . '">' . $distrito->distrito . '</option>';
+            }
+            $data['optProvincias'] = $opt;
+        }catch (Exception $e) {}
+        echo json_encode(array_map('utf8_encode', $data));
     }
     
 	function accionTrabajador(){
