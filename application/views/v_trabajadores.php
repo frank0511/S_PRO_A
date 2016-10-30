@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Trabajadores | Agrofer</title>
+        <title>Trabajadores | SGPA</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
         <meta name="viewport"               content="width=device-width, initial-scale=1.0">
-        <meta name="description"            content="Agrofer">
+        <meta name="description"            content="SGPA">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="theme-color"            content="<?php echo COLOR_BARRA_ANDROID?>">
         
@@ -150,7 +150,7 @@
                     			           </select>
         					           </div>
             				           <div class="col-sm-6 col-md-4 mdl-group__icon mdl-group__select">
-        					               <select class="mdl-select form-control" id="provinciaTrabajador">
+        					               <select class="mdl-select form-control" id="provinciaTrabajador" onchange="getDistritosByProcinciaByDepartamento();">
                     			                <option value="0">Seleccione provincia</option>
                     			           </select>
         					           </div>

@@ -9,7 +9,7 @@ class Lib_utils
         $cons_id_menu_padre = null;
         
         foreach ($permisos as $hijo) {
-            $res .= '<a class="mdl-navigation__link" href="'.base_url().$hijo->rutaModulo.'"><i class="mdi mdi-'.$hijo->iconoModulo.'"></i> '.$hijo->nombreModulo.'</a>';
+            $res .= '<a class="mdl-navigation__link" href="'.base_url().$hijo->rutaModulo.'" ><i class="mdi mdi-'.$hijo->iconoModulo.'"></i> '.$hijo->nombreModulo.'</a>';
         }
         
         return $res;

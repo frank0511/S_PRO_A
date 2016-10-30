@@ -49,7 +49,7 @@ function functionTrabajador(){
 			          correo       : correo,
 			          cargo        : cargo,
 			          observacion  : observacion},
-			url   : 'trabajadores/accionTrabajador',
+			url   : 'c_trabajadores/accionTrabajador',
 			type  : 'POST',
 			async : true
 		}).done(function(data) {
@@ -64,12 +64,32 @@ function getProvinciasByDepartamento() {
 		data : {
 			flag_Dep : flag_Dep
 		},
-		url : 'trabajadores/buildOptProvincia',
+		url : 'c_trabajadores/buildOptProvincia',
 		type : 'POST',
 		async : false
 	}).done(
 			function(data) {
 				data = JSON.parse(data);
 				$('#provinciaTrabajador').append(data.optProvincias);
+				$('#provinciaTrabajador').selectpicker('refresh');
+			});
+}
+
+function getDistritosByProcinciaByDepartamento(){
+	var flag_Dep = $('#departamentoTrabajador option:selected').val();
+	var flag_Prov = $('#provinciaTrabajador option:selected').val();
+	$.ajax({
+		data : {
+			flag_Dep  : flag_Dep,
+			flag_Prov : flag_Prov
+		},
+		url : 'c_trabajadores/buildOptDistrito',
+		type : 'POST',
+		async : false
+	}).done(
+			function(data) {
+				data = JSON.parse(data);
+				$('#distritoTrabajador').append(data.optDistritos);
+				$('#distritoTrabajador').selectpicker('refresh');
 			});
 }

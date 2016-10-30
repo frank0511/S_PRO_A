@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Trabajadores extends CI_Controller {
+class C_Trabajadores extends CI_Controller {
 
 	function __construct(){
         parent::__construct();
@@ -100,6 +100,10 @@ class Trabajadores extends CI_Controller {
         echo json_encode(array_map('utf8_encode', $data));
     }
 
+    function buildOptDistrito(){
+        
+    }
+    
 	function accionTrabajador(){
 		$accion 	  = _post('accionGlobal');
 		$nombre 	  = _post('nombre');
