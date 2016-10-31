@@ -116,7 +116,7 @@ class C_Trabajadores extends CI_Controller {
                 $idDistritoCrypt = _encodeCI($distrito->flag_Distrito);
                 $opt .= '<option value="' . $idDistritoCrypt . '">' . $distrito->distrito . '</option>';
             }
-            $data['optProvincias'] = $opt;
+            $data['optDistritos'] = $opt;
         }catch (Exception $e) {}
         echo json_encode(array_map('utf8_encode', $data));
     }

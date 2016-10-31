@@ -71,12 +71,12 @@ class M_utils extends CI_Model
     
     function getAllDistritos($flag_Dep, $flag_Prov)
     {
-        $sql = "SELECT  flag_Dist,
+        $sql = "SELECT  flag_Distrito,
                         distrito
-                  FROM  localizacion
-                 WHERE  flag_Dep = ?
-                   AND  flag_Prov = ?
-                   AND  flag_Dist != 0";
+                  FROM  ubigeo
+                 WHERE  flag_Departamento = ?
+                   AND  flag_Provincia = ?
+                   AND  flag_Distrito != 0";
         $result = $this->db->query($sql, array(
             $flag_Dep,
             $flag_Prov

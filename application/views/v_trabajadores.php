@@ -87,29 +87,26 @@
             					       <div class="col-sm-6 col-md-4 mdl-group__icon">
         					               <i class="mdi mdi-person"></i>
             				               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    			                <input class="mdl-textfield__input" type="text" id="nombresTrabajador" name="nombresTrabajador" pattern="^([A-Za-z ραινσϊ]{4,30})$">
+                    			                <input class="mdl-textfield__input" type="text" id="nombresTrabajador" name="nombresTrabajador" onkeypress="return soloLetras(event)">
                     			                <label class="mdl-textfield__label" for="nombresTrabajador">Nombres</label>
-                                                <span class="mdl-textfield__error">No se permiten simbolos ni n&uacute;meros.</span>
                     			           </div>
             				           </div>
             					       <div class="col-sm-6 col-md-4 mdl-group__icon">
             				               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    			                <input class="mdl-textfield__input" type="text" id="apePaternoTrabajador" name="apePaternoTrabajador" pattern="^([A-Za-z ραινσϊ]{4,20})$">
+                    			                <input class="mdl-textfield__input" type="text" id="apePaternoTrabajador" name="apePaternoTrabajador" onkeypress="return soloLetras(event)">
                     			                <label class="mdl-textfield__label" for="apePaternoTrabajador">Apellido Paterno</label>
-                                                <span class="mdl-textfield__error">No se permiten simbolos ni n&uacute;meros.</span>
                     			           </div>
             				           </div>
             					       <div class="col-sm-6 col-md-4 mdl-group__icon">
             				               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    			                <input class="mdl-textfield__input" type="text" id="apeMaternoTrabajador" name="apeMaternoTrabajador" pattern="^([A-Za-z ραινσϊ]{4,20})$">
+                    			                <input class="mdl-textfield__input" type="text" id="apeMaternoTrabajador" name="apeMaternoTrabajador" onkeypress="return soloLetras(event)">
                     			                <label class="mdl-textfield__label" for="apeMaternoTrabajador">Apellido Materno</label>
-                                                <span class="mdl-textfield__error">No se permiten simbolos ni n&uacute;meros.</span>
                     			           </div>
             				           </div>                           
             					       <div class="col-sm-6 col-md-4 mdl-group__icon">
             					           <i class="mdi mdi-featured_play_list"></i>
             				               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    			                <input class="mdl-textfield__input" type="text" id="numeroDocumento" name="numeroDocumento" pattern="^([0-9]{8})*$">
+                    			                <input class="mdl-textfield__input" type="text" id="numeroDocumento" name="numeroDocumento">
                     			                <label class="mdl-textfield__label" for="numeroDocumento">Num. Documento</label>
                     			           </div>
             				           </div>

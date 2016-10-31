@@ -29,6 +29,46 @@ function functionTrabajador(){
 	var correo       = $('#correoTrabajador').val();
 	var cargo        = $('#cargoTrabajador option:selected').val();
 	var observacion  = $('#observacionesTrabajador').val();
+
+	if(nombre.trim( ) == '' || nombre.length == 0 || /^\s+$/.test(nombre)){
+		return mostrarNotificacion('warning', 'Ingrese Nombre');
+	}
+	if(ape_pate.trim( ) == '' || ape_pate.length == 0 || /^\s+$/.test(ape_pate)){
+		return mostrarNotificacion('warning', 'Ingrese Apellido Paterno');
+	}
+	if(ape_mate.trim( ) == '' || ape_mate.length == 0 || /^\s+$/.test(ape_mate)){
+		return mostrarNotificacion('warning', 'Ingrese Apellido Materno');
+	}
+	if(num_doc.trim() == '' || num_doc.length == 0 || /^\s+$/.test(num_doc)){
+		return mostrarNotificacion('warning', 'Ingrese Numero de Documento');
+	}
+	if( isNaN(num_doc) ) {
+		return mostrarNotificacion('warning', 'Solo Numeros en Numero de Documento');
+		}
+	if(sexo.length == 0){
+		return mostrarNotificacion('warning', 'Seleccione Sexo');
+	}
+	if(estado.length == 0){
+		return mostrarNotificacion('warning', 'Seleccione Sexo');
+	}
+	if(direccion.trim() == '' || direccion.length == 0 || /^\s+$/.test(direccion)){
+		return mostrarNotificacion('warning', 'Ingrese Numero de Documento');
+	}
+	if(telefono.trim() == '' || telefono.length == 0 || /^\s+$/.test(telefono)){
+		return mostrarNotificacion('warning', 'Ingrese Numero de Documento');
+	}
+	if( isNaN(telefono) ) {
+		return mostrarNotificacion('warning', 'Solo Numeros en Numero de Documento');
+		}
+	if(celular.trim() == '' || celular.length == 0 || /^\s+$/.test(celular)){
+		return mostrarNotificacion('warning', 'Ingrese Numero de Documento');
+	}
+	if( isNaN(celular) ) {
+		return mostrarNotificacion('warning', 'Solo Numeros en Numero de Documento');
+		}
+	if(cargo.length == 0){
+		return mostrarNotificacion('warning', 'Seleccione Sexo');
+	}
 	Pace.restart();
 	Pace.track(function() {
 		$.ajax({
